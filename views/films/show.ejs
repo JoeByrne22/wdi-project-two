@@ -9,25 +9,63 @@
 </div>
 
 <% comments.forEach(comment => { %>
-  <p><span><%= comment.user %></span></p>
-  <p><span><%= comment.content %></span></p>
-  <p><span><%= comment.score %></span></p>
-  <form method="POST" action="/films/<%= _id %>/comments/<%= comment._id %>?_method=delete">
-  <button>X</button>
-  </form>
+
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="http://alpinebusinesssolutions.com/wp-content/uploads/2016/08/icon.jpg">
+        <p><span><%= comment.user %></span></p>
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="field">
+        <p class="control">
+          <p><span><%= comment.content %></span></p>
+          <p><span><%= comment.score %></span></p>
+        </p>
+      </div>
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+          <form method="POST" action="/films/<%= _id %>/comments/<%= comment._id %>?_method=delete">
+          <button>X</button>
+          </form>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </article>
   <% }) %>
 
 
+  <% if (locals.isLoggedIn) { %>
+  <article class="media">
+    <figure class="media-left">
+      <p class="image is-64x64">
+        <img src="http://alpinebusinesssolutions.com/wp-content/uploads/2016/08/icon.jpg">
+      </p>
+    </figure>
+    <div class="media-content">
+      <div class="field">
+        <form action="/films/<%= _id %>/comments" method="post">
+        <textarea name="content"></textarea>
+        <input type="hidden" name="user" value="<%= locals.currentUser.username %>"/>
+        <input class="rateingBox" type="number" name="score" min="0" max="10" placeholder="rate me out of 10"/>
+        <button class="button is-info">Comment here</button>
+        </form>
+      </div>
+      <nav class="level">
 
-<% if (locals.isLoggedIn) { %>
-  <form action="/films/<%= _id %>/comments" method="post">
-    <textarea name="content"></textarea>
-    <input type="hidden" name="user" value="<%= locals.currentUser.username %>"/>
-    <input type="number" name="score" min="0" max="10"/>
-    <button>Comment here</button>
-  </form>
-  <form action="/films/<%= _id %>/?_method=delete" method="post">
-    <button>DELETE</button>
-  </form>
-  <a href="/films/<%= _id %>/edit"><button>Edit</button></a>
+        <div class="level-right">
+          <div class="level-item">
+            <form action="/films/<%= _id %>/?_method=delete" method="post">
+            <button>DELETE</button>
+            </form>
+            <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </article>
+
   <% } %>

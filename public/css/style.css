@@ -16,7 +16,6 @@
 }
 
 
-
 #footer {
   margin-top: 6px;
 }
@@ -28,4 +27,22 @@
 
 #indexPageTiles {
   justify-content: center;
+}
+
+textarea {
+  width: 80%;
+  height: 150px;
+}
+
+.rateingBox {
+  height: 100px;
+}
+
+.media {
+margin-left: 50px;
+margin-right: 50px;
+}
+
+.editButton {
+  padding-left: 30px;
 }
