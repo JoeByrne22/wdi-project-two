@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const port = 4000;
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const env = require('./config/environments');
@@ -31,4 +30,4 @@ app.use(express.static('public'));
 app.use('*', auth.checkAuthStatus);
 app.use(router);
 
-app.listen(port, () => console.log(`Express is listening on port ${port}`));
+app.listen(env.port, () => console.log(`Express is listening on port ${env.port}`));
