@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
+const env = require('./config/environments');
 
 const Film = require('../models/film');
 const User = require('../models/user');
 
-mongoose.connect('mongodb://localhost/lights-camera-review');
+mongoose.connect(env.dbUri);
 
 //clear the database...
 Film.collection.drop();
