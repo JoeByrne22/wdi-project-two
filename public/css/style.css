@@ -76,7 +76,7 @@ h2 {
   padding-bottom: 10px;
 }
 
-.newForm {
+.newForm, .loginForm {
   display: flex;
   flex-direction: column;
   width: 20%;
@@ -84,8 +84,14 @@ h2 {
   margin-bottom: 400px;
 }
 
-.newForm input:nth-child(1) {
+
+.newForm input:nth-child(1), .loginForm input:nth-child(1) {
   margin-bottom: 10px;
+}
+
+.loginForm input:nth-child(2) {
+  margin-bottom: 10px;
+
 }
 
 .newForm input:nth-child(2) {
@@ -99,10 +105,6 @@ h2 {
 
 .newForm input:nth-child(4) {
   margin-bottom: 10px;
-}
-
-.submitButton {
-  border-color: blue
 }
 
 
@@ -151,4 +153,11 @@ h2 {
 .type span:nth-child(3) {
   font-size: 100px;
   margin-top:-12px;
+}
+
+.aboutPageContent {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 400px;
 }
