@@ -1,12 +1,11 @@
-<h2><%= name %></h2>
+<h2>You have selected <%= name %></h2>
 
-<p><%= name %> was made in <%= releaseDate %>, with a cast of <%= cast %></p>
+<p class="showPageContent" ><%= name %> was made in <%= releaseDate %>, with a cast of <%= cast %></p>
 
-<p><%= description %></p>
+<p class="showPageContent" ><%= description %></p>
 
-<div class="showImage">
-  <img src="<%= image %>"/>
-</div>
+<img class="showImage" src="<%= image %>"/>
+
 
 <% comments.forEach(comment => { %>
 
@@ -40,6 +39,10 @@
 
   <% if (locals.isLoggedIn) { %>
   <article class="media">
+  <form action="/films/<%= _id %>/?_method=delete" method="post">
+  <button>DELETE</button>
+  </form>
+  <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
     <figure class="media-left">
       <p class="image is-64x64">
         <img src="http://alpinebusinesssolutions.com/wp-content/uploads/2016/08/icon.jpg">
@@ -50,22 +53,16 @@
         <form action="/films/<%= _id %>/comments" method="post">
         <textarea name="content"></textarea>
         <input type="hidden" name="user" value="<%= locals.currentUser.username %>"/>
-        <input class="rateingBox" type="number" name="score" min="0" max="10" placeholder="rate me out of 10"/>
-        <button class="button is-info">Comment here</button>
+        <input class="ratingBox" type="number" name="score" min="0" max="10" placeholder="rate me out of 10"/>
+        <button class="button is-info">Submit Comment Here</button>
         </form>
       </div>
       <nav class="level">
-
         <div class="level-right">
           <div class="level-item">
-            <form action="/films/<%= _id %>/?_method=delete" method="post">
-            <button>DELETE</button>
-            </form>
-            <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
           </div>
         </div>
       </nav>
     </div>
   </article>
-
-  <% } %>
+<% } %>
