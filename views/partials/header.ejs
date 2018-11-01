@@ -1,0 +1,16 @@
+<section id="header" class="hero is-info">
+  <div class="hero-body">
+    <div class="container">
+        <a class="home" href='/'>Home</a>
+        <a class="index" class="index" href='/films'>Index</a>
+        <a class="about" href='/about'>About</a>
+        <% if(locals.isLoggedIn) { %>
+          <a class="logout" href="/logout">Log Out <%= locals.currentUser.username %></a>
+          <% } else if (!locals.isLoggedIn) { %>
+            <a class="new" href='/new'>Add a new film</a>
+            <a class="login" href='/login'>Login</a>
+            <a class="register" href='/register'>Sign up</a>
+            <% } %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+.indexImage {
+  height: 500px;
+  width: 400px;
+  margin-left: 150px;
+  margin-top: 30px;
+
+}
+
+.home, .index, .about, .new, .logout, .login, .register {
+  margin-left: 80px;
+  font-size: 20px;
+}
+
+.home:hover, .index:hover, .about:hover, .new:hover, .logout:hover, .login:hover, .register:hover {
+  font-size: 30px;
+}
+
+
+
+#footer {
+  margin-top: 6px;
+}
+
+#header {
+  margin-bottom: 20px;
+  /* height: 70px; */
+}
+
+#indexPageTiles {
+  justify-content: center;
+}

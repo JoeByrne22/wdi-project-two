@@ -1,0 +1,33 @@
+<h2><%= name %></h2>
+
+<p><%= name %> was made in <%= releaseDate %>, with a cast of <%= cast %></p>
+
+<p><%= description %></p>
+
+<div class="showImage">
+  <img src="<%= image %>"/>
+</div>
+
+<% comments.forEach(comment => { %>
+  <p><span><%= comment.user %></span></p>
+  <p><span><%= comment.content %></span></p>
+  <p><span><%= comment.score %></span></p>
+  <form method="POST" action="/films/<%= _id %>/comments/<%= comment._id %>?_method=delete">
+  <button>X</button>
+  </form>
+  <% }) %>
+
+
+
+<% if (locals.isLoggedIn) { %>
+  <form action="/films/<%= _id %>/comments" method="post">
+    <textarea name="content"></textarea>
+    <input type="hidden" name="user" value="<%= locals.currentUser.username %>"/>
+    <input type="number" name="score" min="0" max="10"/>
+    <button>Comment here</button>
+  </form>
+  <form action="/films/<%= _id %>/?_method=delete" method="post">
+    <button>DELETE</button>
+  </form>
+  <a href="/films/<%= _id %>/edit"><button>Edit</button></a>
+  <% } %>
