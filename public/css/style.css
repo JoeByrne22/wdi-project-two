@@ -1,96 +1,19 @@
 .indexImage {
-  height: 500px;
+  height: 450px;
   width: 400px;
   margin-left: 150px;
   margin-top: 30px;
 
 }
 
+.showImage {
+  margin-left: 35%;
+  width: 30%;
+}
+
 body {
-  background: $blue: #03061A;
-$panko: #EDCDA3;
-$white: #FFFFFF;
+  background-image: url("https://chrismartinphotography.files.wordpress.com/2013/01/2012-landscapes-c2a9-christopher-martin-93441.jpg");
 
-@mixin size($width, $height: $width) {
-  width: $width;
-  height: $height;
-}
-
-html,body {
-  @include size(100%);
-  margin:0;
-  padding:0;
-  background-color:$blue;
-  position:relative;
-  overflow:hidden;
-}
-
-.star {
-  @include size(3px);
-  border-radius: 50%;
-  position: absolute;
-  background-color: rgba($panko, .8);
-  box-shadow: 0 0 40px 0 rgba($panko, .8), 0 0 20px 0 $white;
-  animation: glow 5s infinite;
-  &--medium {
-    @include size(6px);
-  }
-  &--big {
-    @include size(9px);
-    box-shadow: 0 0 40px 0 $panko, 0 0 20px 0 $white, inset 0 0 4px $white;
-  }
-}
-
-.comet {
-  @include size(6px);
-  background-color: rgba($white, .6);
-  box-shadow: 0 0 40px 0 $panko, 0 0 20px 0 $white, inset 0 0 8px rgba($white,.6);
-  top: 0;
-  left: 80%;
-  opacity: 0.3;
-  transform: rotate(-45deg) translate(0,-50px);
-  animation: comet 6s infinite;
-  &:after {
-    content: '';
-    @include size(20vw,6px);
-    border-radius: 50%;
-    background-color: rgba($white, .1);
-    box-shadow: 0 0 20px rgba($panko, .4);
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
-@keyframes glow {
-  0% {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.2;
-  }
-  100% {
-    opacity: 0.9;
-  }
-}
-
-@keyframes comet {
-  0% {
-    transform: rotate(-45deg) translateX(0);
-    opacity: 0.3;
-  }
-  10% {
-    opacity: 1;
-  }
-  20% {
-    transform: rotate(-45deg) translateX(-100vw);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(-45deg) translateX(-100vw);
-    opacity: 0;
-  }
-}
 }
 
 .home, .index, .about, .new, .logout, .login, .register {
@@ -106,15 +29,18 @@ html,body {
 
 #footer {
   margin-top: 6px;
+  opacity: 0.8;
 }
 
 #header {
   margin-bottom: 20px;
   /* height: 70px; */
+  opacity: 0.8;
 }
 
 #indexPageTiles {
   justify-content: center;
+  opacity: 0.9;
 }
 
 textarea {
@@ -136,11 +62,6 @@ margin-right: 50px;
   padding-left: 30px;
 }
 
-.showImage {
-margin-left: 30%;
-width:40%;
-padding-bottom: 40px;
-}
 
 h2 {
   font-size: 30px;
@@ -153,4 +74,52 @@ h2 {
   justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+
+
+.type span {
+  display:block;
+}
+
+.type {
+  width:400px;
+  height:400px;
+  margin:50px auto;
+	text-align: center;
+	color: #F5C4B6;
+  line-height:0.85;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-weight: bold;
+}
+
+.type span:nth-child(1) {
+  font-size: 100px;
+}
+
+.type span:nth-child(2) {
+  font-family: 'Pacifico', cursive;
+  font-weight: 400;
+  font-size: 60px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 5px 0 0 #F94F6A,
+				-5px 0 0 #F94F6A,
+				0 5px 0 #F94F6A,
+				0 -5px 0 #F94F6A,
+				4px 4px #F94F6A,
+				-4px -4px 0 #F94F6A,
+				4px -4px 0 #F94F6A,
+				-4px 4px 0 #F94F6A;
+  -webkit-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  color:#fff;
+  margin-top:-5px;
+}
+
+.type span:nth-child(3) {
+  font-size: 100px;
+  margin-top:-12px;
 }
