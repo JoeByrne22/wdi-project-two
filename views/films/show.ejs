@@ -36,33 +36,18 @@
   </article>
   <% }) %>
 
+  <form action="/films/<%= _id %>/?_method=delete" method="post">
+    <button>DELETE</button>
+  </form>
+  <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
 
   <% if (locals.isLoggedIn) { %>
   <article class="media">
-  <form action="/films/<%= _id %>/?_method=delete" method="post">
-  <button>DELETE</button>
-  </form>
-  <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
-    <figure class="media-left">
-      <p class="image is-64x64">
-        <img src="http://alpinebusinesssolutions.com/wp-content/uploads/2016/08/icon.jpg">
-      </p>
-    </figure>
-    <div class="media-content">
-      <div class="field">
-        <form action="/films/<%= _id %>/comments" method="post">
-        <textarea name="content"></textarea>
+        <form class="newForm" action="/films/<%= _id %>/comments" method="post">
+        <textarea name="content" placeholder="What do you think of the film?"></textarea>
         <input type="hidden" name="user" value="<%= locals.currentUser.username %>"/>
         <input class="ratingBox" type="number" name="score" min="0" max="10" placeholder="rate me out of 10"/>
-        <button class="button is-info">Submit Comment Here</button>
+        <button id="showSubmitButton" class="button is-info">Submit Comment Here</button>
         </form>
-      </div>
-      <nav class="level">
-        <div class="level-right">
-          <div class="level-item">
-          </div>
-        </div>
-      </nav>
-    </div>
   </article>
 <% } %>
