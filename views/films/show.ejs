@@ -7,6 +7,7 @@
 <img class="showImage" src="<%= image %>"/>
 
 
+
 <% comments.forEach(comment => { %>
 
   <article class="media">
@@ -36,12 +37,12 @@
   </article>
   <% }) %>
 
-  <form action="/films/<%= _id %>/?_method=delete" method="post">
-    <button>DELETE</button>
-  </form>
-  <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
 
   <% if (locals.isLoggedIn) { %>
+    <form action="/films/<%= _id %>/?_method=delete" method="post">
+    <button class="deleteButton">DELETE</button>
+    </form>
+    <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
   <article class="media">
         <form class="newForm" action="/films/<%= _id %>/comments" method="post">
         <textarea name="content" placeholder="What do you think of the film?"></textarea>
