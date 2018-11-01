@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const env = require('./config/environments');
+const env = require('../config/environments');
 
 const Film = require('../models/film');
 const User = require('../models/user');
