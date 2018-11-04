@@ -12,23 +12,23 @@
 
   <article class="media">
     <figure class="media-left">
-      <p class="image is-64x64">
+      <p id="profileImage" class="image is-64x64">
         <img src="http://alpinebusinesssolutions.com/wp-content/uploads/2016/08/icon.jpg">
-        <p><span><%= comment.user %></span></p>
+        <p><span id="commentUsername"><%= comment.user %></span></p>
       </p>
     </figure>
     <div class="media-content">
       <div class="field">
         <p class="control">
-          <p><span><%= comment.content %></span></p>
-          <p><span><%= comment.score %></span></p>
+          <p><span class="comment">Comment:   <%= comment.content %></span></p>
+          <p><span>Rating:   <%= comment.score %></span></p>
         </p>
       </div>
       <nav class="level">
         <div class="level-left">
           <div class="level-item">
           <form method="POST" action="/films/<%= _id %>/comments/<%= comment._id %>?_method=delete">
-          <button>X</button>
+          <button id="deleteCommentButton">X</button>
           </form>
           </div>
         </div>
@@ -40,15 +40,15 @@
 
   <% if (locals.isLoggedIn) { %>
     <form action="/films/<%= _id %>/?_method=delete" method="post">
-    <button class="deleteButton">DELETE</button>
+    <button class="deleteButton">DELETE THIS FILM</button>
     </form>
-    <a class="editButton" href="/films/<%= _id %>/edit"><button>Edit</button></a>
-  <article class="media">
+    <a class="editButton" href="/films/<%= _id %>/edit"><button>EDIT FILM INFO</button></a>
+  <article class="media columns">
         <form class="newForm" action="/films/<%= _id %>/comments" method="post">
-        <textarea name="content" placeholder="What do you think of the film?"></textarea>
+        <textarea class="content column is-6" name="content" placeholder="What do you think of the film?"></textarea>
         <input type="hidden" name="user" value="<%= locals.currentUser.username %>"/>
-        <input class="ratingBox" type="number" name="score" min="0" max="10" placeholder="rate me out of 10"/>
-        <button id="showSubmitButton" class="button is-info">Submit Comment Here</button>
+        <input class="ratingBox column is-3" type="number" name="score" min="0" max="10" placeholder="rate me out of 10"/>
+        <button id="showSubmitButton column is-3" class="button is-info">Submit Comment Here</button>
         </form>
   </article>
 <% } %>

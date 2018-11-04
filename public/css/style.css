@@ -26,6 +26,10 @@ body {
   font-size: 18px;
 }
 
+.logout {
+  margin-left: 200px;
+}
+
 
 #footer {
   margin-top: 6px;
@@ -34,7 +38,6 @@ body {
 
 #header {
   margin-bottom: 20px;
-  /* height: 70px; */
   opacity: 0.8;
 }
 
@@ -52,39 +55,40 @@ textarea {
   width: 15%;
   height: 36px;
   text-align: center;
+  margin-right: 30px;
+
 }
 
 textarea {
-  width: 100;
   margin-right: 30px;
   height: 36px;
   text-align: center;
+  margin-left: 25px;
+
 }
+
 article.media {
 margin-left: 50px;
 margin-right: 50px;
 }
 
-.newForm {
-  display: flex;
-  width: 100%;
-}
 
-.ratingBox, textarea, #showSubmitButton {
-margin: 20px;
+.ratingBox, textarea {
+margin-top: 20px;
 }
 
 #showSubmitButton {
-  margin-left: 20%
+  margin-left: 20%;
+  margin-top: 20px;
 }
 
 .editButton, .deleteButton {
-  padding-left: 30px;
-  margin-left: 50%;
+  /* padding-left: 30px; */
+  margin-left: 5%;
 }
 
 .editButton {
-  padding: 0px;
+margin-bottom: 5%;
 }
 
 
@@ -102,7 +106,10 @@ h2 {
   margin-bottom: 10px;
 }
 
-.newForm,  {
+.newForm  {
+  display: flex;
+  flex-direction: column;
+  width: 89%;
 }
 
 .loginForm, .registerForm, .editForm {
@@ -113,7 +120,7 @@ h2 {
 }
 
 
-.loginForm input:nth-child(1), .registerForm input:nth-child(1), .editForm input:nth-child(1){
+.loginForm input:nth-child(1), .registerForm input:nth-child(1), .editForm input:nth-child(1), .newForm input:nth-child(1){
   margin-bottom: 10px;
 }
 
@@ -134,8 +141,6 @@ h2 {
 .newForm input:nth-child(4), .editForm input:nth-child(4) {
   margin-bottom: 10px;
 }
-
-
 
 .type span {
   display:block;
@@ -193,4 +198,35 @@ h2 {
 article.media {
   background-color: lightblue;
   opacity: 0.93;
+  height: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+margin-top: 10px;
+}
+
+
+
+form.newForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  width: 200px;
+}
+
+#profileImage {
+  margin: 5px;
+}
+
+#commentUsername {
+  margin-left: 25px;
+}
+
+#deleteCommentButton {
+  float: right;
+}
+
+.comment {
+  margin-top: 5px;
 }
