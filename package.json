@@ -7,7 +7,9 @@
   "scripts": {
     "seed": "node db/create-data",
     "start": "node app",
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "build": "webpack -p",
+    "start": "yarn build && node index"
   },
   "dependencies": {
     "body-parse": "^0.1.0",
