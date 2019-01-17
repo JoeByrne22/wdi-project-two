@@ -34,19 +34,22 @@ Start with boilerplate, then create the backend routes and the controllers. Next
 
 Now on the frontend, in my views folder; made simply pages for the index, new and show. Also building my header (Nav Bar) and footer, and adding them to my layout.ejs so that they will always be there.
 
-`<body>
+```
+<body>
   <% include ./partials/header %>
   <div>
     <%- body %>
   </div>
   <% include ./partials/footer %>
-</body>`
+</body>
+```
 
 ###### Homepage Styling
 
 I felt that this project was a good time to test my self, with various ideas. One being styling so I decided to have a go on my homepage. Using webkits, I was able to rotate the letters to make the whole thing more appealing.
 
-`.type span:nth-child(2) {
+```
+.type span:nth-child(2) {
   font-family: 'Pacifico', cursive;
   font-weight: 400;
   font-size: 60px;
@@ -66,13 +69,16 @@ I felt that this project was a good time to test my self, with various ideas. On
   transform-origin: 0 0;
   color:#fff;
   margin-top:-5px;
-}`
+}
+
+```
 
 ###### Index pages
 
 One of the things I enjoyed about using EJS, was the merge of JavaScript and HTML on the same page. Visional I found it easier to understand. For example, when the index page is being rendered I used a forEach loop within ice-cream cones to load the seeds from the db.
 
-`<div class="content">
+```
+<div class="content">
   <% films.forEach(film => {%>
     <div>
     <a href="/films/<%= film.id %>">
@@ -80,11 +86,11 @@ One of the things I enjoyed about using EJS, was the merge of JavaScript and HTM
     </a>
     </div>
     <% }) %>
-  </div> `
+  </div>
+```
 
 Using double flake ice-cream cones, makes it possible to have each film render, and with EJS you can easily see the class of the individual film.
 
 ### Future Additions
 
 By taking a inspiration from IMBD, I would like to add a picture carousel from all the add film posters. Finally adding an external API which would show film times in selected cinemas.
- 
