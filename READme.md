@@ -18,7 +18,7 @@ HTML || CSS || JavaScript || Express.js || Mongoose || Node.js || Heroku || draw
 
 ### Wire Frames
 
-![HomepageAndNavBar](screenshot/Screen Shot 2019-01-04 at 15.35.32.png?raw=true)
+![HomepageAndNavBar](screenshot/image.png)
 
 ![Index Page and New Form](screenshot/Screen Shot 2019-01-04 at 15.35.50.png?raw=true)
 
