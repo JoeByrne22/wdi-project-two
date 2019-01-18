@@ -20,7 +20,7 @@ HTML || CSS || JavaScript || Express.js || Mongoose || Node.js || Heroku || draw
 
 ![HomepageAndNavBar](screenshot/image.png)
 
-![Index Page and New Form](screenshot/Screen Shot 2019-01-04 at 15.35.50.png?raw=true)
+![Index Page and New Form](screenshot/Index.png)
 
 ### The App
 
@@ -28,7 +28,7 @@ A film review app, inspiration taken from IMDB and Rotten Tomatoes. Users are ab
 
 The whole app consists of three forms (login, register and add new) and seven pages (home, about, add new, index, show, login and register).
 
-![preview](screenshot/Jan-17-2019 21-49-16.gif)
+![preview](screenshot/Preview.gif)
 
 #### Process
 
@@ -75,7 +75,7 @@ I felt that this project was a good time to test my self, with various ideas. On
 
 ```
 
-![homepage graphics](screenshot/Screen Shot 2019-01-17 at 21.53.11.png)
+![homepage graphics](screenshot/Home.png)
 
 
 ###### Index pages
@@ -119,7 +119,7 @@ My main win was comments and auth routes. Once they were written it gave my webs
 
 ```
 
-![comments](screenshot/Screen Shot 2019-01-17 at 22.00.02.png)
+![comments](screenshot/comments.png)
 
 
 ### Known Bugs 🐛
@@ -128,7 +128,7 @@ I have a problem within my comments, as long as you are signed in as a users you
 
 When a comment is made, the page is redirected to the top. Ideally, I would want page to stay on the comments section.
 
-![comment example](screenshot/comment project 2.gif)
+![comment example](screenshot/commentproject2.gif)
 
 Also anyone can edit or delete films, this isn't really a bug but in the future I would like to have levels to my auth routes, so only admin were able to edit and delete the films.
 
