@@ -1,8 +1,8 @@
 .indexImage {
-  height: 450px;
+  /* height: 450px;
   width: 50%;
   margin-left: 150px;
-  margin-top: 30px;
+  margin-top: 30px; */
 
 }
 
@@ -213,7 +213,10 @@ form.newForm {
 }
 
 .content {
-  width: 200px;
+  display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #profileImage {
